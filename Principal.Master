@@ -143,7 +143,7 @@ ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" style="color
                         <asp:Label ID="lblDescripion" runat="server" Text=""></asp:Label>
                     </div>
                     <div id="widBoton">
-                        <asp:HyperLink ID="linkDownload" runat="server" ImageUrl="~/App_Themes/Principal/Images/header/buttonDownload.png">Descargar</asp:HyperLink>
+                        <asp:HyperLink ID="linkDownload" runat="server" ImageUrl="~/App_Themes/Principal/Images/header/buttonDownload.png" NavigateUrl="https://github.com/jiestrada/DeveloperJI" Target="_blank">Descargar</asp:HyperLink>
                     </div>
                 </div>
             </asp:Panel>
