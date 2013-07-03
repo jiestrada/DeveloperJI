@@ -1,0 +1,108 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="admin.master.vb" Inherits="DeveloperJI.admin" %>
+
+<%@ Import Namespace="DeveloperJI.db" %>
+<%@ Import Namespace="Controlador" %>
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+
+<meta http-equiv="X-UA-Compatible" content="IE=7"/>
+
+    <title></title>
+    <link href="estilo/default.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="cabecera">
+            <div class="logoAdmin">
+                <img src="../App_Themes/Principal/Images/header/logo.png" />
+            </div>
+            <div class="toolsTop">
+                <%--<a href="#">
+                    <span>4</span>
+                    <img src="images/mensajes.png" />
+                    <p>Mensajes</p>
+                </a>--%>
+                <a href="#">
+                    <span><%=SqlGenerico.GetTotalUsuarios(coneccion.getDataBase)%></span>
+                    <img src="images/usuarios.png" />
+                    <p>Usuarios</p>
+                </a>
+                <a href="#">
+                    <span><%=SqlGenerico.GetTotalComentarios(coneccion.getDataBase)%></span>
+                    <img src="images/comentarios.png" />
+                    <p>Comentarios</p>
+                </a>
+                <a href="../">
+                    <span>Ver</span>
+                    <img src="images/web.png" />
+                    <p>Portal</p>
+                </a>
+                <a></a>
+                <div class="perfil">
+                    <img src="images/Usuario.png" />
+                    <p>
+                    <asp:Label ID="lblUsuario" runat="server" Text="José I. Estrada"></asp:Label>
+                                <a class="editPerfil" href="perfil.aspx">Editar Perfil</a>
+                        <a class="editPerfil" href="Salir.aspx">Salir</a>
+                        </p>
+                </div>
+            </div>
+            
+        </div>
+        <div id="Cuerpo">
+            <div id="ColumnaIzquierda">
+                <ul id="nav">
+                    <li><a href="default.aspx" <% If (valMenu = 1) Then Response.Write("class='seleccionadoMenu'")%>>
+                        <img src="images/Home.png" />&nbsp;&nbsp; Inicio</a>                        
+                    </li>
+                    <li>
+                        
+                        <a href="Post.aspx" <% If (valMenu = 2) Then Response.Write("class='seleccionadoMenu'")%>><img src="images/posts.png" />&nbsp;&nbsp; Posts</a>
+                        <%--<ul>
+                            <li><a href="#">Agregar</a></li>
+                            <li><a href="#">Administrar Historial</a></li>
+                        </ul>--%>
+                    </li>
+                    <li><a href="Config.aspx" <% If (valMenu = 3) Then Response.Write("class='seleccionadoMenu'")%>>
+                        <img src="images/config.png" />&nbsp;&nbsp; Configurar</a>                        
+                    </li>
+                    <li><a href="Menu.aspx" <% If (valMenu = 4) Then Response.Write("class='seleccionadoMenu'")%>>
+                        <img src="images/menu.png" />&nbsp;&nbsp; Admin Menú</a>                        
+                    </li>
+                    
+                   <%-- <li><a href="#">Item 4</a>
+                        <ul>
+                            <li><a href="#">Sub-Item 4 a</a></li>
+                            <li><a href="#">Sub-Item 4 b</a></li>
+                            <li><a href="#">Sub-Item 4 c</a></li>
+                        </ul>
+                    </li>--%>
+                </ul>
+            </div>
+            <div id="ColumnaDerecha">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <script type="text/javascript" >
+            $(document).ready(function () {
+                $('#nav > li > a').click(function () {
+                    if ($(this).attr('class') != 'active') {
+                        $('#nav li ul').slideUp();
+                        $(this).next().slideToggle();
+                        $('#nav li a').removeClass('active');
+                        $(this).addClass('active');
+                    }
+                });
+            });
+        </script>
+    </form>
+</body>
+</html>

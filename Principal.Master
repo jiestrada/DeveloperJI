@@ -1,0 +1,197 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Principal.master.vb" Inherits="DeveloperJI.Principal" %>
+
+<%@ Import Namespace="Microsoft.AspNet.FriendlyUrls" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%: Page.Title %></title>
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link href="~/logoFavicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="divCenterH">
+                <div id="Social">
+                    <asp:HyperLink ID="linkTwitter" runat="server" ImageUrl="~/App_Themes/Principal/Images/header/ico---twitter.png"></asp:HyperLink>
+                    <asp:HyperLink ID="linkFacebook" runat="server" ImageUrl="~/App_Themes/Principal/Images/header/ico---facebook.png"></asp:HyperLink>
+                </div>
+                <div id="Search">
+                    <div id="divlogin">
+                        <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/App_Themes/Principal/Images/header/btn-login.png" NavigateUrl="~/Account/LoginJI.aspx"></asp:HyperLink>
+                    </div>
+                    <div id="divSearch">
+                        <asp:TextBox ID="txtSearch" class="searchbox" runat="server" placeholder="Search here..."></asp:TextBox>
+                        <asp:ImageButton ID="imbSearch" runat="server" CssClass="searchbox_submit" ImageUrl="~/App_Themes/Principal/Images/header/btnsearch.png" />
+
+                    </div>
+                </div>
+                <div class="divisor"></div>
+                <div id="Menu">
+                    <div id="Logo">
+                        <asp:HyperLink NavigateUrl="~/" ID="linkLogo" runat="server"></asp:HyperLink>
+                    </div>
+                    <div id="links">
+                        <ul>
+                            <%= strMenuGeneral%>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="GeneralContent">
+            <div class="divCenter ">
+                <div id="contentBody">
+                    <asp:ContentPlaceHolder ID="ContenBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+                <div id="columnLeft">
+                    <div class="colTitDerecha">
+                        SUSCRIBETE
+                    </div>
+                    <div class="contentColRTags">
+                        <asp:Panel ID="pnlMensaje" Visible="false" CssClass="pnlMensaje" runat="server">
+                <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
+            </asp:Panel>
+                        <asp:TextBox ID="txtSuscribirme" CssClass="textBoxOpc" runat="server" placeholder="Email"></asp:TextBox>
+                        <br />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtSuscribirme" ErrorMessage="*" ValidationGroup="sus" style="color: #CC0000"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="revEmailID" runat="server"
+ControlToValidate="txtSuscribirme"  ValidationGroup="sus"
+ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" style="color: #CC0000">email no valido</asp:RegularExpressionValidator> 
+                        <br />
+                        <asp:Button ID="btnSuscribirte" runat="server" CssClass="buttonEnviar" Text="Suscribirme al blog"  ValidationGroup="sus"/>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="colTitDerecha">
+                        CATEGORÍA
+                    </div>
+                    <div class="contentColR">
+                        <asp:Repeater ID="rptCat" runat="server">
+                            <ItemTemplate>
+                                <a href="<%# FriendlyUrl.Href("~/Categoria",Eval("Name"), Eval("CategoriaID")) %>"><%# Eval("Name") %></a>
+                            </ItemTemplate>
+                            <SeparatorTemplate>
+                                <div class="separador">
+                                    <hr />
+                                </div>
+                            </SeparatorTemplate>
+                        </asp:Repeater>
+                    </div>
+                    <div class="anuncio">
+                        <asp:Literal ID="ltrAnuncio" runat="server"></asp:Literal>
+                    </div>
+                    <div class="divSeparadorRigth"></div>
+                    <div class="colTitDerecha">
+                        TAGS
+                    </div>
+                    <div class="contentColRTags">
+                        <asp:Repeater ID="rptTags" runat="server">
+                            <ItemTemplate>
+                                <a href="<%# FriendlyUrl.Href("~/tag",Eval("metakey"), Eval("total")) %>"><%# Eval("metakey") %></a>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <br style="clear: both;" />
+                    </div>
+                    <div class="divSeparadorRigth"></div>
+                    <div class="colTitDerecha">
+                        POSTS RECIENTES
+                    </div>
+                    <div class="contentColR">
+                        <asp:Repeater ID="rptPost" runat="server">
+                            <ItemTemplate>
+                                <a href="<%# FriendlyUrl.Href("~/Post", Eval("PostTitle"), Eval("PostID")) %>"><%# Eval("PostTitle") %></a>
+                            </ItemTemplate>
+                            <SeparatorTemplate>
+                                <div class="separador">
+                                    <hr />
+                                </div>
+                            </SeparatorTemplate>
+                        </asp:Repeater>
+                    </div>
+                    <div class="divSeparadorRigth"></div>
+                    <div class="colTitDerecha">
+                        REDES SOCIALES
+                    </div>
+                    <div class="contentColR">
+                        <asp:Literal ID="ltrTwitter" runat="server"></asp:Literal>
+                        
+                        
+                        
+                    </div>
+                    <div class="contentColR">
+                        <asp:Literal ID="ltrFacebook" runat="server"></asp:Literal>
+                        </div>
+                    <div class="divSeparadorRigth"></div>
+                </div>
+                <div class="divisor"></div>
+            </div>
+        </div>
+        <footer>
+            <asp:Panel ID="Panel1" CssClass="widgetFooter" runat="server">
+                <div class="divCenterGeneral">
+                    <div id="widTexto">
+                        <asp:Label ID="lblDescripion" runat="server" Text=""></asp:Label>
+                    </div>
+                    <div id="widBoton">
+                        <asp:HyperLink ID="linkDownload" runat="server" ImageUrl="~/App_Themes/Principal/Images/header/buttonDownload.png">Descargar</asp:HyperLink>
+                    </div>
+                </div>
+            </asp:Panel>
+            <div class="widget4Footer">
+                <div class="divCenterGeneral">
+                    <div class="col4">
+                        <p class="titMenuFooter" />
+                        <ul class="menuF">
+                            <%=strMenuGeneralFooter %>
+                        </ul>
+                    </div>
+                    <div class="col4">
+                        <p class="titMenuFooter2"/>
+                        <div>
+                            <asp:Label ID="lblLastTitle" runat="server" Font-Bold="True"></asp:Label><br />
+                            <asp:Literal ID="ltrLastBlog" runat="server"></asp:Literal>
+                            <br />
+                            <asp:HyperLink ID="linkReadLast" runat="server">Leer más</asp:HyperLink>
+                        </div>
+                    </div>
+                    <div class="col4">
+                        <p class="titMenuFooter3" />
+                        <ul class="follow">
+                            <%=strMenuFolow %>
+                            <li class="_rss"><a href="<%=FriendlyUrl.Href("~/rss")%>">RSS Feed</a></li>
+                            <li class="_newsletter"><a href="<%=FriendlyUrl.Href("~/suscribete")%>">Suscribete</a></li>
+                        </ul>
+                    </div>
+                    <div class="last">
+                        <p class="titMenuFooter4" />
+                        <ul class="follow">
+                            <li class="_direccion"><a>
+                                <asp:Label ID="lblDireccion" runat="server" Text=""></asp:Label></a></li>
+                            <li class="_telefono"><a>
+                                <asp:Label ID="lblTelefono" runat="server" Text=""></asp:Label></a></li>
+                            <li class="_newsletter">
+                                <asp:HyperLink ID="linkEmail" runat="server"></asp:HyperLink></li>
+                        </ul>
+                    </div>
+                    <div class="divisor"></div>
+                </div>
+
+            </div>
+            <div class="divisor"></div>
+            <div class="Copyright">
+                Copyright © DeveloperJI
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

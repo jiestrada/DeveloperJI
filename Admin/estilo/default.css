@@ -1,0 +1,387 @@
+﻿body {
+    background: #282828;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    font-size: 13px;
+}
+#cabecera {
+    background-color: #0866C6;    
+    padding-left:10px;
+    padding-right:10px;
+    width:100%;
+    height:90px;
+}
+#Cuerpo {
+    width:100%;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#ColumnaIzquierda{
+    width: 260px;
+    float: left;
+
+}
+
+#ColumnaDerecha {
+    margin-left: 260px;
+    background-color: #FFFFFF;
+}
+
+/*Menu*/
+#nav {
+    float: left;
+    width: 260px;
+    border-top: 1px solid #999;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #202020;
+}
+
+
+
+    #nav li {
+        list-style-type: none;
+    }
+
+
+
+#nav li a {
+    font-family: TitilliumText22L, sans-serif;
+    display: block;
+    padding: 10px 15px;
+    background: #282828;
+    text-decoration: none;
+    color: #CCCCCC;
+    border-bottom-width: 1px;
+    border-bottom-color: #202020;
+    border-bottom-style: solid;
+    vertical-align: middle;
+}
+#nav li a:hover {
+    background: #303030;
+    color: #fff;
+}
+#nav li ul {
+    display: none; 
+}
+#nav li ul li a {
+    padding: 10px 25px;
+    background: #B4B4B4;
+    border-bottom: 1px dotted #ccc;
+    color: #333333;
+}
+
+.active {
+    background-color: #0866C6;
+    color: #FFFFFF;
+    
+}
+.logoAdmin {
+    float:left;
+    padding-left:20px;
+    padding-top :30px;
+}
+.toolsTop {
+    margin-left:260px;
+    height:90px;
+}
+.toolsTop a {
+    opacity: 0.7;
+    -moz-opacity: 0.7;
+    filter: alpha(opacity=70);
+    display: block;
+    width: 90px;
+    height: 90px;
+    background-color: #0866C6;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-left-color: #238CF5;
+    text-align:center;
+    float:left;
+    text-decoration:none;
+    color:#fff;
+    font-family: TitilliumText22L, sans-serif;
+    font-size: 10pt;
+    font-weight:400;
+
+}
+
+#nav li a.seleccionadoMenu {
+    background-color: #0866C6;
+}
+    .toolsTop a:hover {
+        opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+    }
+
+    .toolsTop a span {
+        width:80px;
+        text-align:right;
+        display:block;
+        margin-bottom:5px;
+        margin-top:5px;
+    }
+    .toolsTop a p {
+        padding-top:10px;
+    }
+.perfil {
+    float:right;
+    width:300px;
+    height:90px;
+}
+    .perfil img {
+    border: 2px solid #3985D1;
+    margin: 10px;
+    float:left;
+}
+.perfil p {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+    .perfil p span {
+        font-family: TitilliumText22L, sans-serif;
+        margin-bottom:5px;
+        display:block;
+    }
+    .perfil p a.editPerfil {
+    display: block;
+    width: 150px;
+    height: 15px;
+    text-align: left;
+    margin-bottom: 2px;
+    background-color: #2176CC;
+    padding-bottom:3px;
+    padding-top:3px;
+    font-size:10px;
+    padding-left:10px;
+    opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+
+}
+        .perfil p a:hover {
+            text-decoration:underline;
+        }
+.dashboard {
+    font-family: TitilliumText22L, sans-serif;
+   
+    font-weight: bold;
+    color: #0866C6;
+    padding:10px;
+    height: 84px;
+}
+    .dashboard img {
+        float:left;
+        margin-right:15px;
+    }
+    .dashboard h1 {
+        margin-top:10px;
+         font-size: 35pt;
+    }
+.contAdm {
+
+    background-image: url('../images/back.png');
+    background-repeat: repeat;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #CCCCCC;
+    padding:10px;
+    
+}
+
+.contenedorL {
+    width:48%;
+    float:left;
+}
+.contenedorR {
+    width:48%;
+    float:right;
+    margin-right:20px;
+}
+
+
+    .contAdm h6 {
+        font-family: TitilliumText22L, sans-serif;
+    padding: 10px 10px 10px 30px;
+    background-color: #0866C6;
+    color: #FFFFFF;
+    font-size:12px;
+   font-weight:500;
+   
+
+}
+h6.comentariosR {
+    background-image: url('../images/comment.png');
+    background-repeat: no-repeat;
+    background-position: 6px 10px;
+}
+.contentAp {
+    border: 2px solid #0866C6;
+    padding: 10px;
+    color: #666666;
+
+}
+    .contentAp h3 {
+    color: #0866C6;
+    margin-bottom:10px;
+    font-weight:300;
+}
+    .contentAp textarea {
+        margin-top:10px;
+    }
+.buttonEnviar {
+    padding: 5px;
+    background-color: #EEEEEE;
+    border: 1px solid #C0C0C0;
+    cursor:pointer;
+}
+
+.buttonEnviarOK {
+    padding: 5px;
+    background-color: #006600;
+    border: 1px solid #C0C0C0;
+    cursor: pointer;
+    color: #CCCCCC;
+}
+.buttonEnviarNO {
+    padding: 5px;
+    background-color: #FCB904;
+    border: 1px solid #C0C0C0;
+    cursor: pointer;
+    color: #666666;
+}
+
+ .contentAp hr {
+    border: 1px inset #0866C6;
+    height: 1px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+textarea {
+     font-family: TitilliumText22L, sans-serif;
+     font-size:13px;
+}
+
+.hederGrid th {
+    background-color: #000000;
+    text-transform: uppercase;
+    font-family: TitilliumText22L, sans-serif;
+    color: #FFFFFF;
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #666666;
+}
+.itemGrid td {
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    text-shadow: 0px -1px 0px #FFFFFF;
+    color: #333333;
+    font-family: TitilliumText22L, sans-serif;
+    cursor:pointer;
+}
+.GridPager td {
+    text-align:right;
+    border: 1px solid #CCCCCC;
+}
+.GridPager span {
+     
+    font-family: TitilliumText22L, sans-serif;
+    padding: 5px 10px 5px 10px;
+    color: #666666;
+    display:block;
+}
+.GridPager a {
+    
+    font-family: TitilliumText22L, sans-serif;
+    padding: 5px 10px 5px 10px;
+    color: #999999;
+    display: block;
+    background-color: #FFFFFF;
+}
+
+.grid {
+    width:95%;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+}
+
+.btTab {
+    border-style: none solid none none;
+    background-color: #0866C6;
+    padding: 5px;
+    border-right-width: 1px;
+    border-right-color: #3194F7;
+    font-family: TitilliumText22L, sans-serif;
+    color: #fff;
+    display: block;
+    float: left;
+    cursor:pointer;
+}
+
+.btTabActual {
+    display: block;
+    background-color: #fff;
+    padding: 5px;
+    border-style: none solid none none;
+    border-right-width: 1px;
+    border-right-color: #3194F7;
+    font-family: TitilliumText22L, sans-serif;
+    color: #0866C6;
+    float: left;
+    cursor:pointer;
+}
+
+.dibBackForm {
+    border: 1px solid #0866C6;
+    width:98%;
+}
+
+.tituloTabl {        
+    background-color: #0866C6;
+    height:29px;
+}
+
+.configOcL {
+    width :250px;
+    float:left;
+    margin-right:30px;
+}
+
+.configOpcR {
+    margin-left:280px;
+    margin-right:40px;
+}
+
+.imgLogo {
+    background-color: #FFFFFF;
+    border: 1px solid #666666;
+    width: 200px;
+    height: 28px;
+    padding:5px
+}
+
+
+
+.textBoxOpc {
+    border: 1px solid #CCCCCC;
+    width: 200px;
+    color: #666666;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: TitilliumText22L, sans-serif;
+}
+.btnAl {
+     border: 1px solid #075EB4;
+    float:right;
+    margin-right:50px;
+    color: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: TitilliumText22L, sans-serif;
+    background-color: #0972DD;
+}
